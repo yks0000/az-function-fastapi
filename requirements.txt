@@ -7,3 +7,12 @@ azure-core
 azure-functions
 fastapi
 nest-asyncio
+anyio
+autopep8
+idna
+pycodestyle
+pydantic
+sniffio
+starlette
+toml
+typing_extensions
