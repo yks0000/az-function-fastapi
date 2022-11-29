@@ -1,10 +1,8 @@
 import azure.functions as func
 import time
-import nest_asyncio
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-nest_asyncio.apply()
 
 app = FastAPI(title="FastAPI on Azure")
 app.add_middleware(
@@ -29,4 +27,4 @@ async def root():
     
 
 async def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
-    return func.AsgiMiddleware(app).handle(req, context)
+    return await func.AsgiMiddleware(app).handle_async(req, context)
